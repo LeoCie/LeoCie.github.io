@@ -1,5 +1,6 @@
 * {
     text-align: center;
+    color: blanchedalmond;
 }
 
 .table-row {
@@ -7,11 +8,12 @@
 }
 
 .table-image {
-    height: 25px;
+    height: 40px;
 }
 
 .button {
     margin-top: 5px;
+    color: black;
 }
 
 #profile-img {
@@ -19,13 +21,20 @@
     height: 150px;
     width: 150px;
     object-fit: cover;
+    border-color: blanchedalmond;
+    border-width: 2px;
 }
 
-a.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
+.table-row a {
+    font-size: x-large;
+}
 
-    text-decoration: none;
-    color: initial;
+table {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    background-color: black;
 }
