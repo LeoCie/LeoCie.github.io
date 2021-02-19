@@ -17,19 +17,23 @@ a {
     text-decoration: none !important;
 }
 
-.title {
-    text-align: center;
+.button-container {
+    float: left;
+    margin:auto;
+}
+
+.cube-holder {
+    padding-top: 300px;
 }
 
 .links-table {
-    margin-top: 25px;
     .links-table-row {
-        @include link-box(#3fa1e2, $textColour, 100px, 500px);
+        @include link-box(#3fa1e2, $textColour, 100px, 250px);
         font-size: x-large;
     }
     .links-table-row:hover {
-        @include link-box($textColour, #3fa1e2, 100px, 500px);
-        font-size: xx-large;
+        @include link-box($textColour, #3fa1e2, 100px, 300px);
+        font-size: x-large;
     }
     img {
         float: left;
@@ -46,7 +50,6 @@ a {
 }
 
 .profile-img-container {
-    text-align: center;
     img {
         border: 5px solid $textColour;
         border-radius: 50%;
@@ -61,3 +64,51 @@ a {
     background-color: black;
     color: $textColour;
 }
+
+.shape-cube {
+    width: 400px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transform: rotateX(48deg) rotateY(0deg) rotateZ(45deg);
+    margin: auto;
+    }
+    .shape-cube .tcface {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    }
+    .shape-cube .title-face {
+        text-align: center;
+    background: #a93c84;
+    transform: rotateX(0deg) translateZ(400px);
+    .title {
+        text-align: center;
+    }
+    }
+    .shape-cube .bottom {
+    background: #4076df;
+    }
+    .shape-cube .right {
+    background: #f253d8;
+    transform: rotateY(90deg) rotatez(-90deg) translateZ(400px) translateX(0px);
+    transform-origin: 0 100%;
+    width: 400px;
+    height: 400px;
+    }
+    .shape-cube .left {
+    background: #2876ed;
+    transform: rotateY(-90deg) rotateZ(90deg) translateY(-400px);
+    transform-origin: 0 0;
+    width: 400px;
+    height: 400px;
+    }
+    .shape-cube .back {
+    background: #acf7f4;
+    transform: rotateX(90deg) rotatez(180deg) translateY(-200px) translateZ(200px);
+    height: 400px;
+    }
+    .shape-cube .front {
+    background: #9a78df;
+    transform: rotateX(-90deg) translateY(-200px) translateZ(200px);
+    height: 400px;
+    }

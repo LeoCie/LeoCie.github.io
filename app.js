@@ -1,3 +1,6 @@
+currentX = 48;
+currentZ = 45;
+
 function seeAnotherPicture() {
     var imageLinks = 
     ["https://d1fdloi71mui9q.cloudfront.net/NhnapimYTxazOQV2FPXJ_6fb7a1fcc54b5e9d17560f2e4df39b4f7"
@@ -10,4 +13,29 @@ function seeAnotherPicture() {
     newImages = imageLinks.filter(e => e != imageLinks.src);
     var randomInt = Math.floor(Math.random() * newImages.length);
     image.src = imageLinks[randomInt];
+}
+
+function rotateCube(direction) {
+    var cube = document.getElementById("shape-cube");
+    if (direction == "left") {
+        currentZ = currentZ + 10;
+        cube.style.transform = 'rotateX(' + currentX + 'deg) rotateY(0deg) rotateZ(' + currentZ + 'deg)';
+    }
+    else if (direction == "right") {
+        currentZ = currentZ - 10;
+        cube.style.transform = 'rotateX(' + currentX + 'deg) rotateY(0deg) rotateZ(' + currentZ + 'deg)';
+    }
+    else if (direction == "up") {
+        currentX = currentX + 10;
+        cube.style.transform = 'rotateX(' + currentX + 'deg) rotateY(0deg) rotateZ(' + currentZ + 'deg)';
+    }
+    else if (direction == "down") {
+        currentX = currentX - 10;
+        cube.style.transform = 'rotateX(' + currentX + 'deg) rotateY(0deg) rotateZ(' + currentZ + 'deg)';
+    }
+    else if (direction == "reset") {
+        currentX = 48;
+        currentZ = 45;
+        cube.style.transform = 'rotateX(' + currentX + 'deg) rotateY(0deg) rotateZ(' + currentZ + 'deg)';
+    }
 }

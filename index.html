@@ -3,36 +3,54 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body class="dark-mode">
-    <div class="title">
-        <h1>Kilseic.co.uk</h1>
-        <p>Home of all things Leon Cieslik</p>
+    <div class="button-container">
+    <button onclick="rotateCube('right')">RIGHT</button>
+    <button onclick="rotateCube('left')">LEFT</button> <br>
+    <button onclick="rotateCube('up')">UP</button>
+    <button onclick="rotateCube('down')">DOWN</button> <br>
+    <button onclick="rotateCube('reset')">RESET</button>
     </div>
-    <div class="profile-img-container">
-        <img id="profile-img" src="https://d1fdloi71mui9q.cloudfront.net/NhnapimYTxazOQV2FPXJ_6fb7a1fcc54b5e9d17560f2e4df39b4f7">
-        <div class="fun-buttons">
-            <button class="image-change-button" onclick="seeAnotherPicture()">Who am I</button>
-            <input class="button" type="button" onclick="location.href='http://endless.horse/';" value="?" />
+    <div class="cube-holder">
+        <div class="shape-cube links-table" id="shape-cube">
+        <div class="tcface title-face">
+            <div class="title">
+                <h1>Kilseic.co.uk</h1>
+                <p>Home of all things Leon Cieslik</p>
+            </div>
+            <div class="profile-img-container">
+                <img id="profile-img" src="https://d1fdloi71mui9q.cloudfront.net/NhnapimYTxazOQV2FPXJ_6fb7a1fcc54b5e9d17560f2e4df39b4f7">
+                <div class="fun-buttons">
+                    <button class="image-change-button" onclick="seeAnotherPicture()">Who am I</button>
+                    <input class="button" type="button" onclick="location.href='http://endless.horse/';" value="?" />
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="links-table">
-        <a href="https:///www.linkedin.com/in/leon-c-51ba60b9/" target="_blank">
-            <div class="links-table-row">
-                <img src="https://www.freepnglogos.com/uploads/linkedin-blue-style-logo-png-0.png">
-                <p>LinkedIn Profile</p>
-            </div>
-        </a>
-        <a href="https://www.last.fm/user/Kilseic" target="_blank">
-            <div class="links-table-row">
-                <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/196_Lastfm_Square_logo_logos-512.png">
-                <p>What I'm listening to</p>
-            </div>
-        </a>
+        <div class="tcface left"></div>
+        <div class="tcface front">
+            <a href="https:///www.linkedin.com/in/leon-c-51ba60b9/" target="_blank">
+                <div class="links-table-row">
+                    <img src="https://www.freepnglogos.com/uploads/linkedin-blue-style-logo-png-0.png">
+                    <p>LinkedIn<br>Profile</p>
+                </div>
+            </a>
+            <a href="https://www.last.fm/user/Kilseic" target="_blank">
+                <div class="links-table-row">
+                    <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/196_Lastfm_Square_logo_logos-512.png">
+                    <p>What I'm<br>listening to</p>
+                </div>
+            </a>
+        </div>
+        <div class="tcface bottom"></div>
+        <div class="tcface right">
         <a href="https://www.justgiving.com/fundraising/leon-cieslik-gameheroes" target="_blank">
             <div class="links-table-row">
                 <img src="https://www.cjhhsolicitors.com/wp-content/uploads/macmillan.jpg">
-                <p>Charity work</p>
+                <p>Charity<br>work</p>
             </div>
         </a>
+        </div>
+        <div class="tcface back"></div>
+    </div>
     </div>
     <script src="app.js"></script>
     <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>

@@ -2,19 +2,21 @@ a {
   text-decoration: none !important;
 }
 
-.title {
-  text-align: center;
+.button-container {
+  float: left;
+  margin: auto;
 }
 
-.links-table {
-  margin-top: 25px;
+.cube-holder {
+  padding-top: 300px;
 }
+
 .links-table .links-table-row {
   text-align: center;
   background-color: #3fa1e2;
   color: blanchedalmond;
   height: 100px;
-  width: 500px;
+  width: 250px;
   border-radius: 10px;
   border: 10px solid #aed7f3;
   margin: auto;
@@ -27,13 +29,13 @@ a {
   background-color: blanchedalmond;
   color: #3fa1e2;
   height: 100px;
-  width: 500px;
+  width: 300px;
   border-radius: 10px;
   border: 10px solid white;
   margin: auto;
   margin-bottom: 10px;
   transition: 0.5s;
-  font-size: xx-large;
+  font-size: x-large;
 }
 .links-table img {
   float: left;
@@ -57,9 +59,6 @@ a {
   transition: 0.5s;
 }
 
-.profile-img-container {
-  text-align: center;
-}
 .profile-img-container img {
   border: 5px solid blanchedalmond;
   border-radius: 50%;
@@ -72,6 +71,61 @@ a {
 .dark-mode {
   background-color: black;
   color: blanchedalmond;
+}
+
+.shape-cube {
+  width: 400px;
+  height: 400px;
+  transform-style: preserve-3d;
+  transform: rotateX(48deg) rotateY(0deg) rotateZ(45deg);
+  margin: auto;
+}
+
+.shape-cube .tcface {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.shape-cube .title-face {
+  text-align: center;
+  background: #a93c84;
+  transform: rotateX(0deg) translateZ(400px);
+}
+.shape-cube .title-face .title {
+  text-align: center;
+}
+
+.shape-cube .bottom {
+  background: #4076df;
+}
+
+.shape-cube .right {
+  background: #f253d8;
+  transform: rotateY(90deg) rotatez(-90deg) translateZ(400px) translateX(0px);
+  transform-origin: 0 100%;
+  width: 400px;
+  height: 400px;
+}
+
+.shape-cube .left {
+  background: #2876ed;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-400px);
+  transform-origin: 0 0;
+  width: 400px;
+  height: 400px;
+}
+
+.shape-cube .back {
+  background: #acf7f4;
+  transform: rotateX(90deg) rotatez(180deg) translateY(-200px) translateZ(200px);
+  height: 400px;
+}
+
+.shape-cube .front {
+  background: #9a78df;
+  transform: rotateX(-90deg) translateY(-200px) translateZ(200px);
+  height: 400px;
 }
 
 /*# sourceMappingURL=main.css.map */
