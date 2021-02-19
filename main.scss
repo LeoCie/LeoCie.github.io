@@ -1,0 +1,63 @@
+$textColour: blanchedalmond;
+
+@mixin link-box($backcolour, $text, $height, $width) {
+    text-align: center;
+    background-color: $backcolour;
+    color: $text;
+    height: $height;
+    width: $width;
+    border-radius: $height/10;
+    border: $height/10 solid lighten($color: $backcolour, $amount: 25%);
+    margin: auto;
+    margin-bottom: 10px;
+    transition: 0.5s;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.title {
+    text-align: center;
+}
+
+.links-table {
+    margin-top: 25px;
+    .links-table-row {
+        @include link-box(#3fa1e2, $textColour, 100px, 500px);
+        font-size: x-large;
+    }
+    .links-table-row:hover {
+        @include link-box($textColour, #3fa1e2, 100px, 500px);
+        font-size: xx-large;
+    }
+    img {
+        float: left;
+        margin: 20px;
+        height: 60px;
+    }
+}
+
+.fun-buttons {
+    margin-top: 15px;
+    .image-change-button {
+        @include link-box(#dadd11, #000000, 25px, 125px);
+    }
+}
+
+.profile-img-container {
+    text-align: center;
+    img {
+        border: 5px solid $textColour;
+        border-radius: 50%;
+        height: 150px;
+        width: 150px;
+        object-fit: cover;
+        border-width: 2px;
+    }
+}
+
+.dark-mode {
+    background-color: black;
+    color: $textColour;
+}

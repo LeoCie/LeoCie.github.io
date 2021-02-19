@@ -1,40 +1,77 @@
-* {
-    text-align: center;
-    color: blanchedalmond;
+a {
+  text-decoration: none !important;
 }
 
-.table-row {
-    height: 50px;
+.title {
+  text-align: center;
 }
 
-.table-image {
-    height: 40px;
+.links-table {
+  margin-top: 25px;
+}
+.links-table .links-table-row {
+  text-align: center;
+  background-color: #3fa1e2;
+  color: blanchedalmond;
+  height: 100px;
+  width: 500px;
+  border-radius: 10px;
+  border: 10px solid #aed7f3;
+  margin: auto;
+  margin-bottom: 10px;
+  transition: 0.5s;
+  font-size: x-large;
+}
+.links-table .links-table-row:hover {
+  text-align: center;
+  background-color: blanchedalmond;
+  color: #3fa1e2;
+  height: 100px;
+  width: 500px;
+  border-radius: 10px;
+  border: 10px solid white;
+  margin: auto;
+  margin-bottom: 10px;
+  transition: 0.5s;
+  font-size: xx-large;
+}
+.links-table img {
+  float: left;
+  margin: 20px;
+  height: 60px;
 }
 
-.button {
-    margin-top: 5px;
-    color: black;
+.fun-buttons {
+  margin-top: 15px;
+}
+.fun-buttons .image-change-button {
+  text-align: center;
+  background-color: #dadd11;
+  color: #000000;
+  height: 25px;
+  width: 125px;
+  border-radius: 2.5px;
+  border: 2.5px solid #f3f579;
+  margin: auto;
+  margin-bottom: 10px;
+  transition: 0.5s;
 }
 
-#profile-img {
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    object-fit: cover;
-    border-color: blanchedalmond;
-    border-width: 2px;
+.profile-img-container {
+  text-align: center;
+}
+.profile-img-container img {
+  border: 5px solid blanchedalmond;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-width: 2px;
 }
 
-.table-row a {
-    font-size: x-large;
+.dark-mode {
+  background-color: black;
+  color: blanchedalmond;
 }
 
-table {
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-body {
-    background-color: black;
-}
+/*# sourceMappingURL=main.css.map */
