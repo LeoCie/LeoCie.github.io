@@ -9,22 +9,27 @@ body {
 }
 
 .title-face-container {
-  font-family: "Press Start 2P", cursive;
+  font-family: 'Press Start 2P', cursive;
   margin: auto;
 }
+
 .title-face-container .title {
   text-align: center;
+  margin-top: 25px;
 }
+
 .title-face-container .profile-img-container {
   height: 200px;
 }
+
 .title-face-container .profile-img-container img {
-  margin: 10px 125px;
+  margin: 10px 100px;
   border: 5px solid blanchedalmond;
   border-radius: 50%;
-  height: 150px;
-  width: 150px;
-  object-fit: cover;
+  height: 200px;
+  width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-width: 4px;
 }
 
@@ -42,8 +47,9 @@ a {
 }
 
 .links-table {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
+
 .links-table .links-table-row {
   text-align: center;
   background-color: #3fa1e2;
@@ -54,9 +60,11 @@ a {
   border: 10px solid #aed7f3;
   margin: auto;
   margin-bottom: 10px;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
   font-size: x-large;
 }
+
 .links-table .links-table-row:hover {
   text-align: center;
   background-color: blanchedalmond;
@@ -67,9 +75,11 @@ a {
   border: 10px solid white;
   margin: auto;
   margin-bottom: 10px;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
   font-size: x-large;
 }
+
 .links-table img {
   float: left;
   margin: 20px;
@@ -79,6 +89,7 @@ a {
 .fun-buttons {
   margin: 0 113px;
 }
+
 .fun-buttons .image-change-button {
   text-align: center;
   background-color: #3fa1e2;
@@ -89,9 +100,11 @@ a {
   border: 4.5px solid #aed7f3;
   margin: auto;
   margin-bottom: 10px;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
   font-size: medium;
 }
+
 .fun-buttons .image-change-button:hover {
   text-align: center;
   background-color: #000000;
@@ -102,9 +115,11 @@ a {
   border: 4.5px solid #404040;
   margin: auto;
   margin-bottom: 10px;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
   font-size: medium;
 }
+
 .fun-buttons .weird-button {
   text-align: center;
   background-color: #3fa1e2;
@@ -115,9 +130,11 @@ a {
   border: 4.5px solid #aed7f3;
   margin: auto;
   margin-bottom: 10px;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
   font-size: medium;
 }
+
 .fun-buttons .weird-button:hover {
   text-align: center;
   background-color: #000000;
@@ -128,6 +145,7 @@ a {
   border: 4.5px solid #404040;
   margin: auto;
   margin-bottom: 10px;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
   font-size: medium;
 }
@@ -140,8 +158,10 @@ a {
 .shape-cube {
   width: 400px;
   height: 400px;
-  transform-style: preserve-3d;
-  transform: rotateX(48deg) rotateY(0deg) rotateZ(45deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateX(48deg) rotateY(0deg) rotateZ(45deg);
+          transform: rotateX(48deg) rotateY(0deg) rotateZ(45deg);
   margin: auto;
 }
 
@@ -153,7 +173,8 @@ a {
 
 .shape-cube .title-face {
   background: #a93c84;
-  transform: rotateX(0deg) translateZ(400px);
+  -webkit-transform: rotateX(0deg) translateZ(400px);
+          transform: rotateX(0deg) translateZ(400px);
 }
 
 .shape-cube .bottom {
@@ -162,30 +183,35 @@ a {
 
 .shape-cube .right {
   background: #f253d8;
-  transform: rotateY(90deg) rotatez(-90deg) translateZ(400px) translateX(0px);
-  transform-origin: 0 100%;
+  -webkit-transform: rotateY(90deg) rotatez(-90deg) translateZ(400px) translateX(0px);
+          transform: rotateY(90deg) rotatez(-90deg) translateZ(400px) translateX(0px);
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
   width: 400px;
   height: 400px;
 }
 
 .shape-cube .left {
   background: #2876ed;
-  transform: rotateY(-90deg) rotateZ(90deg) translateY(-400px);
-  transform-origin: 0 0;
+  -webkit-transform: rotateY(-90deg) rotateZ(90deg) translateY(-400px);
+          transform: rotateY(-90deg) rotateZ(90deg) translateY(-400px);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
   width: 400px;
   height: 400px;
 }
 
 .shape-cube .back {
   background: #acf7f4;
-  transform: rotateX(90deg) rotatez(180deg) translateY(-200px) translateZ(200px);
+  -webkit-transform: rotateX(90deg) rotatez(180deg) translateY(-200px) translateZ(200px);
+          transform: rotateX(90deg) rotatez(180deg) translateY(-200px) translateZ(200px);
   height: 400px;
 }
 
 .shape-cube .front {
   background: #9a78df;
-  transform: rotateX(-90deg) translateY(-200px) translateZ(200px);
+  -webkit-transform: rotateX(-90deg) translateY(-200px) translateZ(200px);
+          transform: rotateX(-90deg) translateY(-200px) translateZ(200px);
   height: 400px;
 }
-
 /*# sourceMappingURL=main.css.map */
