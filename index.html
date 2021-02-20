@@ -2,16 +2,16 @@
     <title>Kilseic.co.uk</title>
     <link rel="stylesheet" href="main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <body class="dark-mode">
     <div class="cube-button-container">
-        <button onclick="rotateCube('right')">RIGHT</button>
-        <button onclick="rotateCube('left')">LEFT</button> <br>
-        <button onclick="rotateCube('up')">UP</button>
-        <button onclick="rotateCube('down')">DOWN</button> <br>
-        <button onclick="rotateCube('reset')">RESET</button>
+        <i class="left-button arrow controls" onclick="rotateCube('left')"></i>
+        <i class="right-button arrow controls" onclick="rotateCube('right')"></i>
+        <div class="reset-button controls" onclick="rotateCube('reset')"></div>
+        <i class="up-button arrow controls" onclick="rotateCube('up')"></i>
+        <i class="down-button arrow controls" onclick="rotateCube('down')"></i>
     </div>
     <div class="cube-holder">
         <div class="shape-cube links-table" id="shape-cube">
