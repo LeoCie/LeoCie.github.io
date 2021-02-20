@@ -13,13 +13,43 @@ $textColour: blanchedalmond;
     transition: 0.5s;
 }
 
+body {
+    font-size: 8pt;
+}
+
+.link-box-container {
+    margin: 0 auto;
+    position: relative;
+    top: 20%;
+}
+
+.title-face-container {
+    font-family: 'Press Start 2P', cursive;
+    margin: auto;
+    .title {
+        text-align: center;
+    }
+    .profile-img-container {
+        height: 200px;
+        img {
+            margin: 10px 125px ;
+            border: 5px solid $textColour;
+            border-radius: 50%;
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
+            border-width: 4px;
+        }
+    }
+}
+
 a {
     text-decoration: none !important;
 }
 
-.button-container {
+.cube-button-container {
     float: left;
-    margin:auto;
+    margin: auto;
 }
 
 .cube-holder {
@@ -27,6 +57,7 @@ a {
 }
 
 .links-table {
+    font-family: 'Poppins', sans-serif;
     .links-table-row {
         @include link-box(#3fa1e2, $textColour, 100px, 250px);
         font-size: x-large;
@@ -43,20 +74,22 @@ a {
 }
 
 .fun-buttons {
-    margin-top: 15px;
+    margin: 0 113px;
     .image-change-button {
-        @include link-box(#dadd11, #000000, 25px, 125px);
+        @include link-box(#3fa1e2, #000000, 45px, 125px);
+        font-size: medium;
     }
-}
-
-.profile-img-container {
-    img {
-        border: 5px solid $textColour;
-        border-radius: 50%;
-        height: 150px;
-        width: 150px;
-        object-fit: cover;
-        border-width: 2px;
+    .image-change-button:hover {
+        @include link-box(#000000, #3fa1e2, 45px, 125px);
+        font-size: medium;
+    }
+    .weird-button {
+        @include link-box(#3fa1e2, #000000, 45px, 35px);
+        font-size: medium;
+    }
+    .weird-button:hover {
+        @include link-box(#000000, #3fa1e2, 45px, 35px);
+        font-size: medium;
     }
 }
 
@@ -71,44 +104,40 @@ a {
     transform-style: preserve-3d;
     transform: rotateX(48deg) rotateY(0deg) rotateZ(45deg);
     margin: auto;
-    }
-    .shape-cube .tcface {
+}
+.shape-cube .tcface {
     width: 100%;
     height: 100%;
     position: absolute;
-    }
-    .shape-cube .title-face {
-        text-align: center;
+}
+.shape-cube .title-face {
     background: #a93c84;
     transform: rotateX(0deg) translateZ(400px);
-    .title {
-        text-align: center;
-    }
-    }
-    .shape-cube .bottom {
+}
+.shape-cube .bottom {
     background: #4076df;
-    }
-    .shape-cube .right {
+}
+.shape-cube .right {
     background: #f253d8;
     transform: rotateY(90deg) rotatez(-90deg) translateZ(400px) translateX(0px);
     transform-origin: 0 100%;
     width: 400px;
     height: 400px;
-    }
-    .shape-cube .left {
+}
+.shape-cube .left {
     background: #2876ed;
     transform: rotateY(-90deg) rotateZ(90deg) translateY(-400px);
     transform-origin: 0 0;
     width: 400px;
     height: 400px;
-    }
-    .shape-cube .back {
+}
+.shape-cube .back {
     background: #acf7f4;
     transform: rotateX(90deg) rotatez(180deg) translateY(-200px) translateZ(200px);
     height: 400px;
-    }
-    .shape-cube .front {
+}
+.shape-cube .front {
     background: #9a78df;
     transform: rotateX(-90deg) translateY(-200px) translateZ(200px);
     height: 400px;
-    }
+}

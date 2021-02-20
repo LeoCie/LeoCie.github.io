@@ -1,8 +1,38 @@
+body {
+  font-size: 8pt;
+}
+
+.link-box-container {
+  margin: 0 auto;
+  position: relative;
+  top: 20%;
+}
+
+.title-face-container {
+  font-family: "Press Start 2P", cursive;
+  margin: auto;
+}
+.title-face-container .title {
+  text-align: center;
+}
+.title-face-container .profile-img-container {
+  height: 200px;
+}
+.title-face-container .profile-img-container img {
+  margin: 10px 125px;
+  border: 5px solid blanchedalmond;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-width: 4px;
+}
+
 a {
   text-decoration: none !important;
 }
 
-.button-container {
+.cube-button-container {
   float: left;
   margin: auto;
 }
@@ -11,6 +41,9 @@ a {
   padding-top: 300px;
 }
 
+.links-table {
+  font-family: "Poppins", sans-serif;
+}
 .links-table .links-table-row {
   text-align: center;
   background-color: #3fa1e2;
@@ -44,28 +77,59 @@ a {
 }
 
 .fun-buttons {
-  margin-top: 15px;
+  margin: 0 113px;
 }
 .fun-buttons .image-change-button {
   text-align: center;
-  background-color: #dadd11;
+  background-color: #3fa1e2;
   color: #000000;
-  height: 25px;
+  height: 45px;
   width: 125px;
-  border-radius: 2.5px;
-  border: 2.5px solid #f3f579;
+  border-radius: 4.5px;
+  border: 4.5px solid #aed7f3;
   margin: auto;
   margin-bottom: 10px;
   transition: 0.5s;
+  font-size: medium;
 }
-
-.profile-img-container img {
-  border: 5px solid blanchedalmond;
-  border-radius: 50%;
-  height: 150px;
-  width: 150px;
-  object-fit: cover;
-  border-width: 2px;
+.fun-buttons .image-change-button:hover {
+  text-align: center;
+  background-color: #000000;
+  color: #3fa1e2;
+  height: 45px;
+  width: 125px;
+  border-radius: 4.5px;
+  border: 4.5px solid #404040;
+  margin: auto;
+  margin-bottom: 10px;
+  transition: 0.5s;
+  font-size: medium;
+}
+.fun-buttons .weird-button {
+  text-align: center;
+  background-color: #3fa1e2;
+  color: #000000;
+  height: 45px;
+  width: 35px;
+  border-radius: 4.5px;
+  border: 4.5px solid #aed7f3;
+  margin: auto;
+  margin-bottom: 10px;
+  transition: 0.5s;
+  font-size: medium;
+}
+.fun-buttons .weird-button:hover {
+  text-align: center;
+  background-color: #000000;
+  color: #3fa1e2;
+  height: 45px;
+  width: 35px;
+  border-radius: 4.5px;
+  border: 4.5px solid #404040;
+  margin: auto;
+  margin-bottom: 10px;
+  transition: 0.5s;
+  font-size: medium;
 }
 
 .dark-mode {
@@ -88,12 +152,8 @@ a {
 }
 
 .shape-cube .title-face {
-  text-align: center;
   background: #a93c84;
   transform: rotateX(0deg) translateZ(400px);
-}
-.shape-cube .title-face .title {
-  text-align: center;
 }
 
 .shape-cube .bottom {
