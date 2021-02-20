@@ -12,7 +12,7 @@ function seeAnotherPicture() {
     var image = document.getElementById("profile-img");
     newImages = imageLinks.filter(e => e != imageLinks.src);
     var randomInt = Math.floor(Math.random() * newImages.length);
-    image.src = imageLinks[randomInt];
+    image.src = newImages[randomInt];
 }
 
 function rotateCube(direction) {
