@@ -34,8 +34,31 @@ function rotateCube(direction) {
         cube.style.transform = 'rotateX(' + currentX + 'deg) rotateY(0deg) rotateZ(' + currentZ + 'deg)';
     }
     else if (direction == "reset") {
+        cube.classList.remove('rotate');
         currentX = 48;
         currentZ = 45;
         cube.style.transform = 'rotateX(' + currentX + 'deg) rotateY(0deg) rotateZ(' + currentZ + 'deg)';
     }
+    else if (direction == 'continuous') {
+        if (cube.classList.contains('rotate')) {
+            cube.classList.remove('rotate');
+            return;
+        }
+        cube.classList.add('rotate');
+    }
 }
+
+const toggleBody = document.querySelector('.toggle-body');
+const toggleBtn = document.querySelector('.toggle-btn');
+const bodyClasses = document.querySelector('body').classList;
+
+toggleBtn.addEventListener('click', () => {
+  toggleBody.classList.toggle('toggle-body--on');
+  toggleBtn.classList.toggle('toggle-btn--on');
+  toggleBtn.classList.toggle('toggle-btn--scale');
+  if (bodyClasses.contains('dark-mode')) {
+      bodyClasses.remove('dark-mode');
+      return;
+    }
+    bodyClasses.add('dark-mode');
+});

@@ -15,12 +15,16 @@ $textColour: blanchedalmond;
 
 @keyframes rotation {
     from {
-      transform: rotateX(0deg);
+        transform: rotateZ(0deg) rotateX(0deg) rotateY(359deg);
     }
     to {
-      transform: rotateX(359deg);
+        transform: rotateZ(359deg) rotateX(359deg) rotateY(0deg);
     }
-  }
+}
+
+.rotate {
+    animation: rotation 10s infinite linear;
+}
 
 .link-box-container {
     margin: 0 auto;
@@ -29,7 +33,7 @@ $textColour: blanchedalmond;
 }
 
 .title-face-container {
-    font-family: 'Press Start 2P', cursive;
+    font-family: "Press Start 2P", cursive;
     font-size: 8pt;
     margin: auto;
     .title {
@@ -39,7 +43,7 @@ $textColour: blanchedalmond;
     .profile-img-container {
         height: 200px;
         img {
-            margin: 10px 100px ;
+            margin: 10px 100px;
             border: 5px solid $textColour;
             border-radius: 50%;
             height: 200px;
@@ -63,7 +67,7 @@ a {
         display: inline-block;
         padding: 12px;
         margin-right: 30px;
-        background: rgba(0,0,0,0);
+        background: rgba(0, 0, 0, 0);
     }
     .controls {
         opacity: 50%;
@@ -71,6 +75,16 @@ a {
     }
     .controls:hover {
         opacity: 100%;
+    }
+    .rotate-button {
+        padding: 5px 10px;
+        border-radius: 5px;
+        box-shadow: 0 5px #999;
+        float: left;
+    }
+    .rotate-button:active {
+        box-shadow: 0 2px #999;
+        transform: translateY(3px);
     }
     .right-button {
         transform: rotate(-45deg);
@@ -128,7 +142,7 @@ a {
 }
 
 .links-table {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     .links-table-row {
         @include link-box(#3fa1e2, $textColour, 100px, 250px);
         font-size: 14pt;
@@ -162,6 +176,13 @@ a {
         @include link-box(#000000, #3fa1e2, 45px, 35px);
         font-size: medium;
     }
+}
+
+.spotify-playlist-title {
+    height: 34px;
+    text-align: center;
+    padding: 8px 0;
+    font-size: smaller;
 }
 
 .dark-mode {
@@ -211,4 +232,67 @@ a {
     background: #9a78df;
     transform: rotateX(-90deg) translateY(-200px) translateZ(200px);
     height: 400px;
+}
+
+$pink: #FF8FDE;
+$blue: #618BFF;
+
+$animtime: 1.5s;
+$easing: cubic-bezier(0.68, -0.15, 0.265, 1.35);
+$iteration: 1;
+
+.toggle-body {
+  width: 7rem;
+  height: 4rem;
+  position: absolute;
+  top: calc(50% - 4rem / 2);
+  left: calc(50% - 7rem / 2);
+  background: white;
+  border-radius: 2rem;
+  animation: angle-reverse $animtime $easing;
+}
+.toggle-body--on {
+  animation: angle $animtime $easing;
+  animation-direction: alternate;
+}
+.toggle-btn {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: calc(50% - 2rem / 2);
+  left: calc(27% - 2rem / 2);
+  background: white;
+  border-radius: 2rem;
+  background: $blue;
+  cursor: pointer;
+  transform:  translateX(0);
+  transition: $animtime $easing;
+}
+.toggle-btn--on {
+  transition: $animtime $easing;
+  transform:  translateX(150%);
+  background: $pink;
+}
+
+@keyframes angle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes angle-reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
