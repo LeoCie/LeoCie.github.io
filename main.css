@@ -307,6 +307,8 @@ a {
   -webkit-transform: rotateX(48deg) rotateY(0deg) rotateZ(45deg);
           transform: rotateX(48deg) rotateY(0deg) rotateZ(45deg);
   margin: auto;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .shape-cube .tcface {

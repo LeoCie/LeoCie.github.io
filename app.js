@@ -17,20 +17,21 @@ function seeAnotherPicture() {
 
 function rotateCube(direction) {
     var cube = document.getElementById("shape-cube");
+    var degreesToRotate = 25;
     if (direction == "left") {
-        currentZ = currentZ + 10;
+        currentZ = currentZ + degreesToRotate;
         cube.style.transform = 'rotateX(' + currentX + 'deg) rotateY(0deg) rotateZ(' + currentZ + 'deg)';
     }
     else if (direction == "right") {
-        currentZ = currentZ - 10;
+        currentZ = currentZ - degreesToRotate;
         cube.style.transform = 'rotateX(' + currentX + 'deg) rotateY(0deg) rotateZ(' + currentZ + 'deg)';
     }
     else if (direction == "up") {
-        currentX = currentX + 10;
+        currentX = currentX + degreesToRotate;
         cube.style.transform = 'rotateX(' + currentX + 'deg) rotateY(0deg) rotateZ(' + currentZ + 'deg)';
     }
     else if (direction == "down") {
-        currentX = currentX - 10;
+        currentX = currentX - degreesToRotate;
         cube.style.transform = 'rotateX(' + currentX + 'deg) rotateY(0deg) rotateZ(' + currentZ + 'deg)';
     }
     else if (direction == "reset") {
