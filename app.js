@@ -104,10 +104,10 @@ function setHtmlForTopType(type, data) {
         var listNumber = (i + 1).toString();
         var nameOfListing = data['top'+type+'s'][type][i]['name'];
         if (nameOfListing.length >= 30) {
-            nameOfListing = nameOfListing.substring(0, 27) + '... '
+            nameOfListing = nameOfListing.substring(0, 27) + '...'
         }
         listingHtml = document.getElementById("listing" + listNumber);
-        listingHtml.innerHTML = listNumber + ". " + nameOfListing + '(' + data['top'+type+'s'][type][i]['playcount'] + ' plays)';
+        listingHtml.innerHTML = listNumber + ". " + nameOfListing + ' (' + data['top'+type+'s'][type][i]['playcount'] + ' plays)';
         listingHtml.href = data['top'+type+'s'][type][i]['url'];
     }
 }
