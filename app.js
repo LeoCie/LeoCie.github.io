@@ -1,3 +1,4 @@
+API_KEY = '358df054457df80cfd78f38ef349d222';
 var currentX = 48;
 var currentZ = 45;
 var imageLinks =
@@ -7,7 +8,7 @@ var imageLinks =
         , "https://scontent-lhr8-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/p640x640/84533393_135352291340709_4084054298297338048_n.jpg?_nc_ht=scontent-lhr8-1.cdninstagram.com&_nc_cat=109&_nc_ohc=NW0tWPjm62MAX-vIC1D&tp=1&oh=d4a77ad99fdf6ac7e22e5deded5a4ea6&oe=604E29B6"
         , "https://scontent-lhr8-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/118050202_594077614615978_7184177503539444492_n.jpg?_nc_ht=scontent-lhr8-1.cdninstagram.com&_nc_cat=110&_nc_ohc=rVgX4bj6GDEAX9XH-5N&tp=1&oh=82e4e2a3e2c367097280f72b155c6cb5&oe=60508B42"
     ];
-var topArtists = FetchTopArtists();
+FetchTopType();
 
 function seeAnotherPicture() {
     var image = document.getElementById("profile-img");
@@ -65,15 +66,48 @@ toggleBtn.addEventListener('click', () => {
     bodyClasses.add('dark-mode');
 });
 
-function FetchTopArtists() {
-    var chosenTimeFrame = document.getElementById("artistTimeSelect").value;
-    fetch('http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=kilseic&api_key=358df054457df80cfd78f38ef349d222&format=json&limit=15&period=' + chosenTimeFrame)
+function FetchTopType() {
+    var chosenTimeFrame = document.getElementById("timeSelect").value;
+    var chosenType = document.getElementById("typeSelect").value;
+    if (chosenType == "artists") {
+        FetchAndSetTopArtists(chosenTimeFrame);
+    } else if (chosenType == "albums") {
+        FetchAndSetTopAlbums(chosenTimeFrame);
+    } else {
+        FetchAndSetTopTracks(chosenTimeFrame);
+    }
+}
+
+function FetchAndSetTopArtists(chosenTimeFrame) {
+    fetch('http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=kilseic&api_key=' + API_KEY + '&format=json&limit=15&period=' + chosenTimeFrame)
         .then(response => response.json()).then(data => {
-            for (var i = 0; i < 15; i++) {
-                var artistNumber = (i + 1).toString();
-                artistHtml = document.getElementById("artist" + artistNumber);
-                artistHtml.innerHTML = artistNumber + ". " + data['topartists']['artist'][i]['name'] + '(' + data['topartists']['artist'][i]['playcount'] + ' plays)';
-                artistHtml.href = data['topartists']['artist'][i]['url'];
-            }
+            setHtmlForTopType("artist", data);
         });
+}
+
+function FetchAndSetTopAlbums(chosenTimeFrame) {
+    fetch('http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=kilseic&api_key=' + API_KEY + '&format=json&limit=15&period=' + chosenTimeFrame)
+        .then(response => response.json()).then(data => {
+            setHtmlForTopType("album", data);
+        });
+}
+
+function FetchAndSetTopTracks(chosenTimeFrame) {
+    fetch('http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=kilseic&api_key=' + API_KEY + '&format=json&limit=15&period=' + chosenTimeFrame)
+        .then(response => response.json()).then(data => {
+            setHtmlForTopType("track", data);
+        });
+}
+
+function setHtmlForTopType(type, data) {
+    for (var i = 0; i < 15; i++) {
+        var listNumber = (i + 1).toString();
+        var nameOfListing = data['top'+type+'s'][type][i]['name'];
+        if (nameOfListing.length >= 30) {
+            nameOfListing = nameOfListing.substring(0, 27) + '... '
+        }
+        listingHtml = document.getElementById("listing" + listNumber);
+        listingHtml.innerHTML = listNumber + ". " + nameOfListing + '(' + data['top'+type+'s'][type][i]['playcount'] + ' plays)';
+        listingHtml.href = data['top'+type+'s'][type][i]['url'];
+    }
 }
