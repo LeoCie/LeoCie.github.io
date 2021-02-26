@@ -325,6 +325,8 @@ a {
 
 .shape-cube .bottom {
   background: #4076df;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
 }
 
 .shape-cube .right {
