@@ -66,37 +66,17 @@ toggleBtn.addEventListener('click', () => {
     bodyClasses.add('dark-mode');
 });
 
-function FetchTopType() {
+async function FetchTopType() {
     var chosenTimeFrame = document.getElementById("timeSelect").value;
     var chosenType = document.getElementById("typeSelect").value;
-    if (chosenType == "artists") {
-        FetchAndSetTopArtists(chosenTimeFrame);
-    } else if (chosenType == "albums") {
-        FetchAndSetTopAlbums(chosenTimeFrame);
-    } else {
-        FetchAndSetTopTracks(chosenTimeFrame);
-    }
+    StartLoading();
+    await FetchAndSetTopType(chosenType, chosenTimeFrame).then(data => { setHtmlForTopType(chosenType, data); });
+    StopLoading();
 }
 
-function FetchAndSetTopArtists(chosenTimeFrame) {
-    fetch('http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=kilseic&api_key=' + API_KEY + '&format=json&limit=15&period=' + chosenTimeFrame)
-        .then(response => response.json()).then(data => {
-            setHtmlForTopType("artist", data);
-        });
-}
-
-function FetchAndSetTopAlbums(chosenTimeFrame) {
-    fetch('http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=kilseic&api_key=' + API_KEY + '&format=json&limit=15&period=' + chosenTimeFrame)
-        .then(response => response.json()).then(data => {
-            setHtmlForTopType("album", data);
-        });
-}
-
-function FetchAndSetTopTracks(chosenTimeFrame) {
-    fetch('http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=kilseic&api_key=' + API_KEY + '&format=json&limit=15&period=' + chosenTimeFrame)
-        .then(response => response.json()).then(data => {
-            setHtmlForTopType("track", data);
-        });
+async function FetchAndSetTopType(type, chosenTimeFrame) {
+    var response = await fetch('http://ws.audioscrobbler.com/2.0/?method=user.gettop'+type+'s&user=kilseic&api_key=' + API_KEY + '&format=json&limit=15&period=' + chosenTimeFrame);
+    return await response.json();
 }
 
 function setHtmlForTopType(type, data) {
@@ -110,4 +90,18 @@ function setHtmlForTopType(type, data) {
         listingHtml.innerHTML = listNumber + ". " + nameOfListing + ' (' + data['top'+type+'s'][type][i]['playcount'] + ' plays)';
         listingHtml.href = data['top'+type+'s'][type][i]['url'];
     }
+}
+
+function StartLoading() {
+    document.getElementById("timeSelect").disabled = true;
+    document.getElementById("typeSelect").disabled = true;
+    document.getElementById("listings").style.display = "none";
+    document.getElementById("loading-spinner").style.display = "block";
+}
+
+function StopLoading() {
+    document.getElementById("timeSelect").disabled = false;
+    document.getElementById("typeSelect").disabled = false;
+    document.getElementById("loading-spinner").style.display = "none";
+    document.getElementById("listings").style.display = "block";
 }
