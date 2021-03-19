@@ -121,6 +121,13 @@ a {
           transform: translateY(3px);
 }
 
+@media (max-width: 980px) {
+  .cube-button-container .rotate-button:active {
+    -webkit-transform: translateY(-107px);
+            transform: translateY(-107px);
+  }
+}
+
 .cube-button-container .right-button {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);

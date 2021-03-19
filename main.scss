@@ -98,6 +98,9 @@ a {
     .rotate-button:active {
         box-shadow: 0 2px #999;
         transform: translateY(3px);
+        @media (max-width: $breakpoint) {
+            transform: translateY(-107px);
+          }
     }
     .right-button {
         transform: rotate(-45deg);
