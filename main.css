@@ -63,7 +63,20 @@ a {
 
 .cube-button-container {
   float: left;
-  margin: 70px 50px;
+  margin: 50px;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+@media (max-width: 980px) {
+  .cube-button-container {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    margin: 175px auto 0 auto;
+    display: block;
+    max-width: 22%;
+    float: none;
+  }
 }
 
 .cube-button-container .arrow {
@@ -91,6 +104,14 @@ a {
   -webkit-box-shadow: 0 5px #999;
           box-shadow: 0 5px #999;
   float: left;
+}
+
+@media (max-width: 980px) {
+  .cube-button-container .rotate-button {
+    float: right;
+    -webkit-transform: translateY(-110px);
+            transform: translateY(-110px);
+  }
 }
 
 .cube-button-container .rotate-button:active {
@@ -181,6 +202,8 @@ a {
 
 .cube-holder {
   padding-top: 300px;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .links-table {

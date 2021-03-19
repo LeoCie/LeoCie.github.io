@@ -1,4 +1,5 @@
 $textColour: blanchedalmond;
+$breakpoint: 980px;
 
 @mixin link-box($backcolour, $text, $height, $width) {
     text-align: center;
@@ -60,7 +61,15 @@ a {
 
 .cube-button-container {
     float: left;
-    margin: 70px 50px;
+    margin: 50px;
+    transition: 2s;
+    @media (max-width: $breakpoint) {
+      transform: scale(2);
+      margin: 175px auto 0 auto;
+      display: block;
+      max-width: 22%;
+      float: none;
+    }
     .arrow {
         border: solid #ffffff;
         border-width: 0 10px 10px 0;
@@ -81,6 +90,10 @@ a {
         border-radius: 5px;
         box-shadow: 0 5px #999;
         float: left;
+        @media (max-width: $breakpoint) {
+            float: right;
+            transform: translateY(-110px);
+          }
     }
     .rotate-button:active {
         box-shadow: 0 2px #999;
@@ -139,6 +152,7 @@ a {
 
 .cube-holder {
     padding-top: 300px;
+    transition: 1s;
 }
 
 .links-table {
